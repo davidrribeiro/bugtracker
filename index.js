@@ -11,7 +11,7 @@ const credentials = require('./bugtracker.json')
 //Configs
 const docId = '1LUkJreRxfFQBUeXFgc1kV7OZNgpP5Z4v_H8kpqXqKYk'
 const worksheetIndex = 0
-const sendgridkey = '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'
+const sendgridkey = 'MY_API_SENDGRID'
 
 app.set('view engine', 'ejs')
 app.set('views', path.resolve(__dirname, 'views'))
@@ -41,7 +41,7 @@ app.post('/', async (request, response) => {
         // Se for crítico
 
         if (request.body.issueType === 'CRITICAL') {
-            sgMail.setApiKey(sendgridkey)
+            sgMail.setApiKey(/*SET API*/)
             const msg = {
                 to: 'talkdsign@gmail.com',
                 from: 'talkdsign@gmail.com',
