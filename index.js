@@ -55,7 +55,7 @@ app.post('/', async (request, response) => {
         }
 
 
-        response.send('Bug reportado com sucesso')
+        response.render('sucesso')
     } catch (err) {
         response.send('Erro ao enviar o formulário.')
         console.log(err)
