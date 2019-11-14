@@ -9,7 +9,7 @@ const GoogleSpreadsheet = require('google-spreadsheet')
 const credentials = require('./bugtracker.json')
 
 //Configs
-const docId = '1LUkJreRxfFQBUeXFgc1kV7OZNgpP5Z4v_H8kpqXqKYk'
+const docId = 'MY_ID_GOOGLE_SHEET'
 const worksheetIndex = 0
 const sendgridkey = 'MY_API_SENDGRID'
 
@@ -41,7 +41,7 @@ app.post('/', async (request, response) => {
         // Se for crítico
 
         if (request.body.issueType === 'CRITICAL') {
-            sgMail.setApiKey(/*SET API*/)
+            sgMail.setApiKey(sendgridkey)
             const msg = {
                 to: 'talkdsign@gmail.com',
                 from: 'talkdsign@gmail.com',
